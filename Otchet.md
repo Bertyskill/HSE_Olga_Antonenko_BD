@@ -4,7 +4,7 @@
 
 ### Таблицы
 
-** 1. StudentGroups (Группы студентов)**
+**1. StudentGroups (Группы студентов)**
 
 - group_id (INT, PRIMARY KEY, AUTO_INCREMENT) — уникальный идентификатор группы.
 - group_name (VARCHAR(50), NOT NULL) — название группы.
