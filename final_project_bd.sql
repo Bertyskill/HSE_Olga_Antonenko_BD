@@ -1,3 +1,14 @@
+
+--Создаем бд, таблицы и определяем их атрибуты и ключи.
+--Нам нужны таблицы с информацией о студентах, преподавателях, предметах, оценках и группах.
+CREATE DATABASE univer;
+USE univer;
+
+CREATE TABLE StudentGroups (
+    group_id INT PRIMARY KEY AUTO_INCREMENT,
+    group_name VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE Students (
     student_id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
@@ -5,7 +16,7 @@ CREATE TABLE Students (
     date_of_birth DATE,
     contact_info VARCHAR(100),
     group_id INT,
-    FOREIGN KEY (group_id) REFERENCES Groups(group_id)
+    FOREIGN KEY (group_id) REFERENCES StudentGroups(group_id)
 );
 
 CREATE TABLE Teachers (
@@ -31,9 +42,4 @@ CREATE TABLE Grades (
     date DATE,
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id)
-);
-
-CREATE TABLE Groups (
-    group_id INT PRIMARY KEY AUTO_INCREMENT,
-    group_name VARCHAR(50) NOT NULL
 );
